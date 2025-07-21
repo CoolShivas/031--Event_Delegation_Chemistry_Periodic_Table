@@ -90,11 +90,23 @@
     <script>
       // <!-- Creating a project to display the top 50 elements of the periodic table in groups of 10 with event delegation involves dynamically generating HTML elements, managing the event delegation, and displaying relevant information when an element is clicked.  -->
 
-      function initializePeriodicTable(){
+      function initializePeriodicTable() {
         // // // Firstly, accessing the id or class references;
         const accMainBody = document.querySelector(".mainBody");
-        console.log(accMainBody); // Getting section tag on browser console;
-      };
+        // console.log(accMainBody); // Getting section tag on browser console;
+
+        // // // Creation of 103 periodic table elements;
+        for (let i = 1; i <= 103; i++) {
+          // // // Displaying the elements on main screen;
+          const divTag = document.createElement("div");
+          divTag.classList.add("divTag");
+          divTag.innerText = i;
+          console.log(divTag); // Getting new element divTag on browser console;
+
+          // // // Pushing it inside the section tag;
+          accMainBody.append(divTag); // Getting divTag on main screen;
+        }
+      }
       initializePeriodicTable();
     </script>
   </body>
