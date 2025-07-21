@@ -90,6 +90,15 @@
     <script>
       // <!-- Creating a project to display the top 50 elements of the periodic table in groups of 10 with event delegation involves dynamically generating HTML elements, managing the event delegation, and displaying relevant information when an element is clicked.  -->
 
+
+      // // // Creation of createPeriodicElements function and passing the parameters and return it where it is called;
+      const createPeriodicElements = (symbol, atomicNumber, name) =>{
+        const elements = document.createElement("div");
+        elements.classList.add("elements");
+        elements.innerHTML = symbol; // Passing the `Ele->${i}` in the symbol here;
+        return elements; // And, returning the function to the calling area;
+      };
+
       function initializePeriodicTable() {
         // // // Firstly, accessing the id or class references;
         const accMainBody = document.querySelector(".mainBody");
@@ -98,13 +107,16 @@
         // // // Creation of 103 periodic table elements;
         for (let i = 1; i <= 103; i++) {
           // // // Displaying the elements on main screen;
-          const divTag = document.createElement("div");
-          divTag.classList.add("divTag");
-          divTag.innerText = i;
-          // console.log(divTag); // Getting new element divTag on browser console;
+          // const divTag = document.createElement("div");
+          // divTag.classList.add("divTag");
+          // divTag.innerText = i;
+          // // console.log(divTag); // Getting new element divTag on browser console;
 
-          // // // Pushing it inside the section tag;
-          accMainBody.append(divTag); // Getting divTag on main screen;
+          // // // // Pushing it inside the section tag;
+          // accMainBody.append(divTag); // Getting divTag on main screen;
+
+          // // // Making short by reusable function.With the help of createPeriodicElements and calling here to get data i.e, symbol, atomicNumber, and name;
+          const divTag = createPeriodicElements(`Ele->${i}`, i, `Element${i}`);
         }
 
         // // // Adding the event listener on section tag;
