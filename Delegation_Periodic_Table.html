@@ -106,7 +106,15 @@
       // // // Creation of handlerOnElementClick() separately to be called on event listener.
       const handlerOnElementClick = (event) => {
         const targetElem = event.target;
-        alert(targetElem.innerText);
+        // alert(targetElem.innerText);
+        // // // Use of Conditional Statement;
+        if (targetElem.classList.contains("elements")) {
+          const atomicNumbers = targetElem.getAttribute("data-atomic-number"); // Getting the setAttribute here;
+          console.log(atomicNumbers); // Getting attribute on browser console;
+
+          const elemName = targetElem.getAttribute("data-element-name"); // Getting the setAttribute here;
+          console.log(elemName); // Getting attribute on browser console;
+        }
       };
 
       function initializePeriodicTable() {
@@ -126,7 +134,11 @@
           // accMainBody.append(divTag); // Getting divTag on main screen;
 
           // // // Making short by reusable function.With the help of createPeriodicElements and calling here to get data i.e, symbol, atomicNumber, and name;
-          const divTag = createPeriodicElements(`Ele->${i}`, i, `Element${i}`); // Getting the paramets here;
+          const divTag = createPeriodicElements(
+            `Ele->${i}`,
+            i,
+            `Element->${i}`
+          ); // Getting the paramets here;
           // // // // Pushing it inside the section tag;
           accMainBody.append(divTag); // Getting divTag on main screen;
         }
