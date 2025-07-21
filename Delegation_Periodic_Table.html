@@ -90,9 +90,8 @@
     <script>
       // <!-- Creating a project to display the top 50 elements of the periodic table in groups of 10 with event delegation involves dynamically generating HTML elements, managing the event delegation, and displaying relevant information when an element is clicked.  -->
 
-
       // // // Creation of createPeriodicElements function and passing the parameters and return it where it is called;
-      const createPeriodicElements = (symbol, atomicNumber, name) =>{
+      const createPeriodicElements = (symbol, atomicNumber, name) => {
         const elements = document.createElement("div");
         elements.classList.add("elements");
         elements.innerHTML = symbol; // Passing the `Ele->${i}` in the symbol here;
@@ -116,16 +115,17 @@
           // accMainBody.append(divTag); // Getting divTag on main screen;
 
           // // // Making short by reusable function.With the help of createPeriodicElements and calling here to get data i.e, symbol, atomicNumber, and name;
-          const divTag = createPeriodicElements(`Ele->${i}`, i, `Element${i}`);
+          const divTag = createPeriodicElements(`Ele->${i}`, i, `Element${i}`); // Getting the paramets here;
+          // // // // Pushing it inside the section tag;
+          accMainBody.append(divTag);  // Getting divTag on main screen;
         }
 
         // // // Adding the event listener on section tag;
-        accMainBody.addEventListener('click', (event) => {
+        accMainBody.addEventListener("click", (event) => {
           //alert(event.target); // We get the alert pop-up on user target element on the main screen;
 
           alert(event.target.innerText); // Previously, on user click we are getting this [object HTMLDivElement] on the alert pop-up not the element number or name; Now, getting it;
         });
-
       }
       initializePeriodicTable();
     </script>
