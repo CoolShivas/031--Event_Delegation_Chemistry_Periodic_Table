@@ -101,7 +101,7 @@
           const divTag = document.createElement("div");
           divTag.classList.add("divTag");
           divTag.innerText = i;
-          console.log(divTag); // Getting new element divTag on browser console;
+          // console.log(divTag); // Getting new element divTag on browser console;
 
           // // // Pushing it inside the section tag;
           accMainBody.append(divTag); // Getting divTag on main screen;
@@ -109,9 +109,11 @@
 
         // // // Adding the event listener on section tag;
         accMainBody.addEventListener('click', (event) => {
-          alert(event.target); // We get the alert pop-up on user target element on the main screen;
+          //alert(event.target); // We get the alert pop-up on user target element on the main screen;
+
+          alert(event.target.innerText); // Previously, on user click we are getting this [object HTMLDivElement] on the alert pop-up not the element number or name; Now, getting it;
         });
-        
+
       }
       initializePeriodicTable();
     </script>
