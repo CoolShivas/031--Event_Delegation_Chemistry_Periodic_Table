@@ -106,6 +106,12 @@
           // // // Pushing it inside the section tag;
           accMainBody.append(divTag); // Getting divTag on main screen;
         }
+
+        // // // Adding the event listener on section tag;
+        accMainBody.addEventListener('click', (event) => {
+          alert(event.target); // We get the alert pop-up on user target element on the main screen;
+        });
+        
       }
       initializePeriodicTable();
     </script>
