@@ -95,6 +95,11 @@
         const elements = document.createElement("div");
         elements.classList.add("elements");
         elements.innerHTML = symbol; // Passing the `Ele->${i}` in the symbol here;
+
+        // // // Setting the attributes for atomicNumber and name;
+        elements.setAttribute("data-atomic-number", atomicNumber); // Getting the attribute on Element Tab of browser;
+        elements.setAttribute("data-element-name", name);// Getting the attribute on Element Tab of browser;
+
         return elements; // And, returning the function to the calling area;
       };
 
