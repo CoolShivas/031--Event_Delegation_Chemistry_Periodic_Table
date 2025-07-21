@@ -98,9 +98,15 @@
 
         // // // Setting the attributes for atomicNumber and name;
         elements.setAttribute("data-atomic-number", atomicNumber); // Getting the attribute on Element Tab of browser;
-        elements.setAttribute("data-element-name", name);// Getting the attribute on Element Tab of browser;
+        elements.setAttribute("data-element-name", name); // Getting the attribute on Element Tab of browser;
 
         return elements; // And, returning the function to the calling area;
+      };
+
+      // // // Creation of handlerOnElementClick() separately to be called on event listener.
+      const handlerOnElementClick = (event) => {
+        const targetElem = event.target;
+        alert(targetElem.innerText);
       };
 
       function initializePeriodicTable() {
@@ -122,15 +128,16 @@
           // // // Making short by reusable function.With the help of createPeriodicElements and calling here to get data i.e, symbol, atomicNumber, and name;
           const divTag = createPeriodicElements(`Ele->${i}`, i, `Element${i}`); // Getting the paramets here;
           // // // // Pushing it inside the section tag;
-          accMainBody.append(divTag);  // Getting divTag on main screen;
+          accMainBody.append(divTag); // Getting divTag on main screen;
         }
 
         // // // Adding the event listener on section tag;
-        accMainBody.addEventListener("click", (event) => {
-          //alert(event.target); // We get the alert pop-up on user target element on the main screen;
+        // accMainBody.addEventListener("click", (event) => {
+        //   //alert(event.target); // We get the alert pop-up on user target element on the main screen;
 
-          alert(event.target.innerText); // Previously, on user click we are getting this [object HTMLDivElement] on the alert pop-up not the element number or name; Now, getting it;
-        });
+        //   alert(event.target.innerText); // Previously, on user click we are getting this [object HTMLDivElement] on the alert pop-up not the element number or name; Now, getting it;
+        // });
+        accMainBody.addEventListener("click", handlerOnElementClick);
       }
       initializePeriodicTable();
     </script>
